@@ -261,6 +261,10 @@ LabClaim.MouseButton1Down:connect(function()
 	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(121,59,-738) + Vector3.new(1,0,0)
 end)
 
+function round(n) --- rounding function
+	return math.floor(n * 10) / 10
+end
+
 
 function coolantupdateA()
 	local coolant1 = game.Workspace.GameState.Core.Coolant1.Value
@@ -342,9 +346,6 @@ end
 
 
 
-function round(n) --- rounding function
-	return math.floor(n * 10) / 10
-end
 
 
 local msglist= { --- a list of messages data keeper thing
@@ -361,7 +362,7 @@ print("loadedAAAA") --- loaded check because i need sleep tonight
 
 register=function(player) -- runs every time a player joins
 	player.Chatted:Connect(function(msg)
-		if G.bonkers == false then
+		if _G.bonkers == false then
 
 		end -- runs once the player that joined chats a message
 		if msg == ":coretemp" then -- condition
@@ -405,7 +406,7 @@ end
 
 registerA=function(player) -- runs every time a player joins
 	player.Chatted:Connect(function(msg)
-		if G.bonkers == false then
+		if _G.bonkers == false then
  -- runs once the player that joined chats a message
 	if msg == ":coolantstatus" then -- condition
 				print("recieved")
