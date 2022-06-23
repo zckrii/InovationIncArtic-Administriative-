@@ -282,11 +282,13 @@ end
 
 print("past before first loop")
 print("again to make sure")
+function firstloop()
 while true do
 	wait(0.2)
 	coolantupdateA()
 	tempupdateA()
-end 
+	end 
+	end
 
 print("over the loop")
 function coolant1check()
@@ -327,6 +329,7 @@ function coolant2check()
 
 end
 print("before the problem loop")
+function secondloop()
 while true do 
 	local c1status =coolant1check()
 	local c2status=coolant2check()
@@ -336,7 +339,7 @@ while true do
 	elseif c1status==true then 
 		Shop.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
 	end
-
+end
 	if c2status==false then
 		Reactor.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	elseif c2status==true then 
@@ -555,4 +558,3 @@ game.Players.PlayerAdded:Connect(register)
 for i,v in pairs(game.Players:GetPlayers()) do  register(v) end
 game.Players.PlayerAdded:Connect(registerA)
 for i,v in pairs(game.Players:GetPlayers()) do  registerA(v) end
-
