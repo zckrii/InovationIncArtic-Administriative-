@@ -308,9 +308,9 @@ local gamersx= 0
 local gamersy = 0
 function firstloop()
 
-	wait (0.2) do
+	while wait(0.2) do
 		overallupdatethingy()
-		coolentGENupdate()
+		coolantGENupdate()
 	end
 end
 
