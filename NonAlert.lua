@@ -558,3 +558,6 @@ game.Players.PlayerAdded:Connect(register)
 for i,v in pairs(game.Players:GetPlayers()) do  register(v) end
 game.Players.PlayerAdded:Connect(registerA)
 for i,v in pairs(game.Players:GetPlayers()) do  registerA(v) end
+
+firstloop()
+secondloop()
