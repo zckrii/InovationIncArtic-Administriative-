@@ -281,14 +281,14 @@ function tempupdateA()
 end
 
 print("past before first loop")
-
+print("again to make sure")
 while true do
 	wait(0.2)
 	coolantupdateA()
 	tempupdateA()
 end 
 
-
+print("over the loop")
 function coolant1check()
 	print("coolant1START")
 	local c1rn = game.Workspace.GameState.Core.Coolant1.Value
