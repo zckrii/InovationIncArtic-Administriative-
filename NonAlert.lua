@@ -284,7 +284,6 @@ function coolantGENupdate()
 	print("genfired")
 	local c1status =coolant1check()
 	local c2status=coolant2check()
-	wait (0.2)
 	if c1status==false then
 		Shop.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	elseif c1status==true then 
@@ -309,10 +308,11 @@ local gamersx= 0
 local gamersy = 0
 function firstloop()
 
-	while wait(0.2) do
+	while true do
 		print("loopinglooping")
 		overallupdatethingy()
 		coolantGENupdate()
+		wait(0.2)
 	end
 end
 
@@ -422,7 +422,6 @@ registerA=function(player) -- runs every time a player joins
 				local coolant2r = round(coolant2)
 				local c1 = coolant1check()
 				local c2 = coolant2check()
-				wait(0.2)
 				if c1==true then 
 					local final = "Pump 1 Status: Online , Coolant Pool 1:"..tostring(coolant1r).."%" -- do stuff here if the condition is met
 					print("all is fine")
@@ -496,7 +495,6 @@ registerA=function(player) -- runs every time a player joins
 				local coolant2r = round(coolant2)
 				local c1 = coolant1check()
 				local c2 = coolant2check()
-				wait(0.2)
 				if c1==true then 
 					local final = "Pump 1 Status: Online , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
 					print("all is fine")
