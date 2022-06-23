@@ -281,9 +281,10 @@ function tempupdateA()
 end
 
 function coolantGENupdate()
+print("genfired")
 	local c1status =coolant1check()
 	local c2status=coolant2check()
-	wait (0.5)
+	wait (0.2;)
 	if c1status==false then
 		Shop.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	elseif c1status==true then 
@@ -309,6 +310,7 @@ local gamersy = 0
 function firstloop()
 
 	while wait(0.2) do
+		print("loopinglooping")
 		overallupdatethingy()
 		coolantGENupdate()
 	end
