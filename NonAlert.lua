@@ -289,11 +289,11 @@ function coolantGENupdate()
 	elseif c1status==true then 
 		Shop.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
 	end
-end
 if c2status==false then
 	Reactor.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 elseif c2status==true then 
 	Reactor.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
+	end
 end
 
 
