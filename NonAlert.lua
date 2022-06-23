@@ -281,10 +281,10 @@ function tempupdateA()
 end
 
 function coolantGENupdate()
-print("genfired")
+	print("genfired")
 	local c1status =coolant1check()
 	local c2status=coolant2check()
-	wait (0.2;)
+	wait (0.2)
 	if c1status==false then
 		Shop.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 	elseif c1status==true then 
@@ -435,7 +435,7 @@ registerA=function(player) -- runs every time a player joins
 						}
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 					print("sent")
-					
+
 				end
 
 
@@ -452,7 +452,7 @@ registerA=function(player) -- runs every time a player joins
 						}
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 					print("sent")
-					
+
 				end
 
 
@@ -469,7 +469,7 @@ registerA=function(player) -- runs every time a player joins
 						}
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 					print("sent")
-					
+
 				end
 
 
@@ -487,7 +487,7 @@ registerA=function(player) -- runs every time a player joins
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 					print("sent")
 				end
-		
+
 
 			elseif msg == "/e :coolantstatus"then
 				local coolant1=game.Workspace.GameState.Core.Coolant1.Value
@@ -509,7 +509,7 @@ registerA=function(player) -- runs every time a player joins
 						}
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 					print("sent")
-				
+
 				end
 
 
@@ -526,7 +526,7 @@ registerA=function(player) -- runs every time a player joins
 						}
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 					print("sent")
-			
+
 				end
 
 
@@ -543,7 +543,7 @@ registerA=function(player) -- runs every time a player joins
 						}
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 					print("sent")
-			
+
 				end
 
 
@@ -560,7 +560,7 @@ registerA=function(player) -- runs every time a player joins
 						}
 					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 					print("sent")
-				
+
 				end
 			else	
 				return end
