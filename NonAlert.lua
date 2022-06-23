@@ -100,7 +100,7 @@ Title_2.BorderColor3 = Color3.fromRGB(255, 255, 255)
 Title_2.Position = UDim2.new(0.136363596, 0, 0, 0)
 Title_2.Size = UDim2.new(0, 419, 0, 50)
 Title_2.Font = Enum.Font.SciFi
-Title_2.Text = "Innovation Arctic Base"
+Title_2.Text = "Base Innovation Artic"
 Title_2.TextColor3 = Color3.fromRGB(255, 255, 255)
 Title_2.TextSize = 28.000
 
