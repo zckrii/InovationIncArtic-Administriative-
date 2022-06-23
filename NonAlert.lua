@@ -288,7 +288,6 @@ while true do
 	tempupdateA()
 end 
 
-local 
 
 function coolant1check()
 	print("coolant1START")
