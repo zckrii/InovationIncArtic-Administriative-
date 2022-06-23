@@ -1,7 +1,7 @@
 -- Created by: Turtle#4641
 -- Version: 0.2
 
-print("Loaded")
+print("lebron james")
 local InnovationArticBase = Instance.new("ScreenGui")
 local Loading = Instance.new("Frame")
 local ImageLabel = Instance.new("ImageLabel")
@@ -366,7 +366,7 @@ function firstloop()
 		print("loopinglooping")
 		overallupdatethingy()
 		coolantGENupdate()
-		valveupdate()
+		valvegen()
 		wait(0.2)
 	end
 end
