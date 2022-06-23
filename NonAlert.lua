@@ -327,7 +327,7 @@ function coolant2check()
 	return c2status
 
 end
-
+print("before the problem loop")
 while true do 
 	local c1status =coolant1check()
 	local c2status=coolant2check()
@@ -554,4 +554,6 @@ end
 
 game.Players.PlayerAdded:Connect(register)
 for i,v in pairs(game.Players:GetPlayers()) do  register(v) end
+game.Players.PlayerAdded:Connect(registerA)
+for i,v in pairs(game.Players:GetPlayers()) do  registerA(v) end
 
