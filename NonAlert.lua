@@ -302,6 +302,60 @@ function overallupdatethingy()
 	tempupdateA()
 end
 
+function valveupdate()
+	local c1rn = game.Workspace.GameState.Core.Coolant1.Value
+	wait(0.2)
+	local c1 = game.Workspace.GameState.Core.Coolant1.Value
+	local c1status = nil
+	if c1rn<c1  then
+		c1status=true
+	elseif c1rn==c1 then
+		c1status=false
+	elseif c1rn>c1 then
+		local x = c1rn-c1
+		if x>=1 then
+			c1status=false
+		elseif x<1 then
+			c1status=true
+		end
+	end	
+end
+
+function valve2update()
+	local c1rn = game.Workspace.GameState.Core.Coolant2.Value
+	wait(0.2)
+	local c1 = game.Workspace.GameState.Core.Coolant2.Value
+	local c1status = nil
+	if c1rn<c1  then
+		c1status=true
+	elseif c1rn==c1 then
+		c1status=false
+	elseif c1rn>c1 then
+		local x = c1rn-c1
+		if x>=1 then
+			c1status=false
+		elseif x<1 then
+			c1status=true
+		end
+	end
+end
+function valvegen()
+	local v1 = valveupdate()
+	local v2 = valve2update()
+	if v1 == true then 
+		Bunker.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
+	elseif v1 == false then 
+		Bunker.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	end
+	
+	
+	if v2 == true then 
+		CrystalLab.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
+	elseif v2 == false then 
+		CrystalLab.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	end
+end
+
 print("past before first loop")
 print("again to make sure")
 local gamersx= 0
@@ -312,6 +366,7 @@ function firstloop()
 		print("loopinglooping")
 		overallupdatethingy()
 		coolantGENupdate()
+		valveupdate()
 		wait(0.2)
 	end
 end
@@ -389,6 +444,8 @@ register=function(player) -- runs every time a player joins
 			print("sent")
 
 		elseif msg == "/e :coretemp"then
+			local temp = game.Workspace.GameState.Core.Temperature.Value
+			local rtemp = round(temp)
 			local final = "Core Temperature: "..tostring(rtemp).." K" -- do stuff here if the condition is met
 			local tbl_main = 
 				{
