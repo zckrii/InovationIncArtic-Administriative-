@@ -284,9 +284,24 @@ print("past before first loop")
 print("again to make sure")
 function firstloop()
 while true do
-	wait(0.2)
 	coolantupdateA()
 	tempupdateA()
+		local c1status =coolant1check()
+	local c2status=coolant2check()
+	wait (0.5)
+	if c1status==false then
+		Shop.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	elseif c1status==true then 
+		Shop.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
+	end
+end
+	if c2status==false then
+		Reactor.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+	elseif c2status==true then 
+		Reactor.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
+	end
+		
+		
 	end 
 	end
 
@@ -329,24 +344,7 @@ function coolant2check()
 
 end
 print("before the problem loop")
-function secondloop()
-while true do 
-	local c1status =coolant1check()
-	local c2status=coolant2check()
-	wait (0.5)
-	if c1status==false then
-		Shop.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	elseif c1status==true then 
-		Shop.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
-	end
-end
-	if c2status==false then
-		Reactor.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
-	elseif c2status==true then 
-		Reactor.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
-	end
 
-end
 
 
 
@@ -431,7 +429,7 @@ registerA=function(player) -- runs every time a player joins
 
 
 				if c1 == false then 
-					local final = "Pump 1 Status: Offline , Coolant Pool 1:"..tostring(coolant1r).."%" -- do stuff here if the condition is met
+					local final = "Pump 1 Status: Offline , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
 					print("all is fine")
 					local final2 =""
 
@@ -447,7 +445,7 @@ registerA=function(player) -- runs every time a player joins
 
 
 				if c2 == true then 
-					local final = "Pump 2 Status: Online , Coolant Pool 2:"..tostring(coolant2r).."%" -- do stuff here if the condition is met
+					local final = "Pump 2 Status: Online , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
 					print("all is fine")
 					local final2 =""
 
@@ -463,7 +461,7 @@ registerA=function(player) -- runs every time a player joins
 
 
 				if c2 == false then 
-					local final = "Pump 2 Status: Offline , Coolant Pool 2:"..tostring(coolant2r).."%" -- do stuff here if the condition is met
+					local final = "Pump 2 Status: Offline , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
 					print("all is fine")
 					local final2 =""
 
@@ -484,7 +482,7 @@ registerA=function(player) -- runs every time a player joins
 				local c1 = coolant1check()
 				local c2 = coolant2check()
 				if c1==true then 
-					local final = "Pump 1 Status: Online , Coolant Pool 1:"..tostring(coolant1r).."%" -- do stuff here if the condition is met
+					local final = "Pump 1 Status: Online , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
 					print("all is fine")
 					local final2 =""
 
@@ -500,7 +498,7 @@ registerA=function(player) -- runs every time a player joins
 
 
 				if c1 == false then 
-					local final = "Pump 1 Status: Offline , Coolant Pool 1:"..tostring(coolant1r).."%" -- do stuff here if the condition is met
+					local final = "Pump 1 Status: Offline , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
 					print("all is fine")
 					local final2 =""
 
@@ -516,7 +514,7 @@ registerA=function(player) -- runs every time a player joins
 
 
 				if c2 == true then 
-					local final = "Pump 2 Status: Online , Coolant Pool 2:"..tostring(coolant2r).."%" -- do stuff here if the condition is met
+					local final = "Pump 2 Status: Online , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
 					print("all is fine")
 					local final2 =""
 
@@ -532,7 +530,7 @@ registerA=function(player) -- runs every time a player joins
 
 
 				if c2 == false then 
-					local final = "Pump 2 Status: Offline , Coolant Pool 2:"..tostring(coolant2r).."%" -- do stuff here if the condition is met
+					local final = "Pump 2 Status: Offline , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
 					print("all is fine")
 					local final2 =""
 
@@ -560,4 +558,3 @@ game.Players.PlayerAdded:Connect(registerA)
 for i,v in pairs(game.Players:GetPlayers()) do  registerA(v) end
 
 firstloop()
-secondloop()
