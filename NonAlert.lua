@@ -553,7 +553,7 @@ registerA=function(player) -- runs every time a player joins
 			local c1 = coolant1check()
 			local c2 = coolant2check()
 			if c1==true then 
-				local final = "Pump 1 Status: Online , Coolant Pool 1:"..tostring(coolant1r).."%" -- do stuff here if the condition is met
+				local final = "Pump 1 Status: Online , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
 				print("all is fine")
 				local final2 =""
 
