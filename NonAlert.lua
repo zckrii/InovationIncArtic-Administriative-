@@ -303,6 +303,7 @@ function overallupdatethingy()
 end
 
 function valveupdate()
+	print("valve1srated")
 	local c1rn = game.Workspace.GameState.Core.Coolant1.Value
 	wait(0.2)
 	local c1 = game.Workspace.GameState.Core.Coolant1.Value
@@ -319,9 +320,11 @@ function valveupdate()
 			c1status=true
 		end
 	end	
+return c1status
 end
 
 function valve2update()
+	print("valve2Started")
 	local c1rn = game.Workspace.GameState.Core.Coolant2.Value
 	wait(0.2)
 	local c1 = game.Workspace.GameState.Core.Coolant2.Value
@@ -338,21 +341,28 @@ function valve2update()
 			c1status=true
 		end
 	end
+return c1status
 end
 function valvegen()
+	print("valvegenStarted")
 	local v1 = valveupdate()
 	local v2 = valve2update()
+	print("valvegencheck")
 	if v1 == true then 
 		Bunker.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
+		print("GENTRUEv1")
 	elseif v1 == false then 
 		Bunker.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		print("GENFALSEv1")
 	end
-	
-	
+
+
 	if v2 == true then 
 		CrystalLab.BackgroundColor3 = Color3.fromRGB(0, 242, 0)
+		print("GENTRUEv2")
 	elseif v2 == false then 
 		CrystalLab.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+		print("GENFALSEV2")
 	end
 end
 
@@ -422,9 +432,8 @@ print("loadedAAAA") --- loaded check because i need sleep tonight
 
 register=function(player) -- runs every time a player joins
 	player.Chatted:Connect(function(msg)
-		if _G.bonkers == false then
 
-		end -- runs once the player that joined chats a message
+		-- runs once the player that joined chats a message
 		if msg == ":coretemp" then -- condition
 			print("recieved")
 
@@ -454,11 +463,11 @@ register=function(player) -- runs every time a player joins
 				}
 			game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 			print("sent")
-		else
-			return end
+
+			return 
+		end
 		wait(5)
 	end)
-
 end
 
 
@@ -467,156 +476,156 @@ end
 
 registerA=function(player) -- runs every time a player joins
 	player.Chatted:Connect(function(msg)
-		if _G.bonkers == false then
-			-- runs once the player that joined chats a message
-			if msg == ":coolantstatus" then -- condition
-				print("recieved")
+
+		-- runs once the player that joined chats a message
+		if msg == ":coolantstatus" then -- condition
+			print("recieved")
 
 
-				local coolant1=game.Workspace.GameState.Core.Coolant1.Value
-				local coolant2=game.Workspace.GameState.Core.Coolant2.Value
-				local coolant1r = round(coolant1)
-				local coolant2r = round(coolant2)
-				local c1 = coolant1check()
-				local c2 = coolant2check()
-				if c1==true then 
-					local final = "Pump 1 Status: Online , Coolant Pool 1:"..tostring(coolant1r).."%" -- do stuff here if the condition is met
-					print("all is fine")
-					local final2 =""
+			local coolant1=game.Workspace.GameState.Core.Coolant1.Value
+			local coolant2=game.Workspace.GameState.Core.Coolant2.Value
+			local coolant1r = round(coolant1)
+			local coolant2r = round(coolant2)
+			local c1 = coolant1check()
+			local c2 = coolant2check()
+			if c1==true then 
+				local final = "Pump 1 Status: Online , Coolant Pool 1:"..tostring(coolant1r).."%" -- do stuff here if the condition is met
+				print("all is fine")
+				local final2 =""
 
-					local tbl_main = 
-						{
-							final , 
-							"All"
-						}
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
-					print("sent")
+				local tbl_main = 
+					{
+						final , 
+						"All"
+					}
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
+				print("sent")
 
-				end
-
-
-
-				if c1 == false then 
-					local final = "Pump 1 Status: Offline , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
-					print("all is fine")
-					local final2 =""
-
-					local tbl_main = 
-						{
-							final , 
-							"All"
-						}
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
-					print("sent")
-
-				end
+			end
 
 
 
-				if c2 == true then 
-					local final = "Pump 2 Status: Online , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
-					print("all is fine")
-					local final2 =""
+			if c1 == false then 
+				local final = "Pump 1 Status: Offline , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
+				print("all is fine")
+				local final2 =""
 
-					local tbl_main = 
-						{
-							final , 
-							"All"
-						}
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
-					print("sent")
+				local tbl_main = 
+					{
+						final , 
+						"All"
+					}
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
+				print("sent")
 
-				end
-
-
-
-				if c2 == false then 
-					local final = "Pump 2 Status: Offline , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
-					print("all is fine")
-					local final2 =""
-
-					local tbl_main = 
-						{
-							final , 
-							"All"
-						}
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
-					print("sent")
-				end
-
-
-			elseif msg == "/e :coolantstatus"then
-				local coolant1=game.Workspace.GameState.Core.Coolant1.Value
-				local coolant2=game.Workspace.GameState.Core.Coolant2.Value
-				local coolant1r = round(coolant1)
-				local coolant2r = round(coolant2)
-				local c1 = coolant1check()
-				local c2 = coolant2check()
-				if c1==true then 
-					local final = "Pump 1 Status: Online , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
-					print("all is fine")
-					local final2 =""
-
-					local tbl_main = 
-						{
-							final , 
-							"All"
-						}
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
-					print("sent")
-
-				end
+			end
 
 
 
-				if c1 == false then 
-					local final = "Pump 1 Status: Offline , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
-					print("all is fine")
-					local final2 =""
+			if c2 == true then 
+				local final = "Pump 2 Status: Online , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
+				print("all is fine")
+				local final2 =""
 
-					local tbl_main = 
-						{
-							final , 
-							"All"
-						}
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
-					print("sent")
+				local tbl_main = 
+					{
+						final , 
+						"All"
+					}
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
+				print("sent")
 
-				end
-
-
-
-				if c2 == true then 
-					local final = "Pump 2 Status: Online , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
-					print("all is fine")
-					local final2 =""
-
-					local tbl_main = 
-						{
-							final , 
-							"All"
-						}
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
-					print("sent")
-
-				end
+			end
 
 
 
-				if c2 == false then 
-					local final = "Pump 2 Status: Offline , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
-					print("all is fine")
-					local final2 =""
+			if c2 == false then 
+				local final = "Pump 2 Status: Offline , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
+				print("all is fine")
+				local final2 =""
 
-					local tbl_main = 
-						{
-							final , 
-							"All"
-						}
-					game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
-					print("sent")
+				local tbl_main = 
+					{
+						final , 
+						"All"
+					}
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
+				print("sent")
+			end
 
-				end
+
+		elseif msg == "/e :coolantstatus"then
+			local coolant1=game.Workspace.GameState.Core.Coolant1.Value
+			local coolant2=game.Workspace.GameState.Core.Coolant2.Value
+			local coolant1r = round(coolant1)
+			local coolant2r = round(coolant2)
+			local c1 = coolant1check()
+			local c2 = coolant2check()
+			if c1==true then 
+				local final = "Pump 1 Status: Online , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
+				print("all is fine")
+				local final2 =""
+
+				local tbl_main = 
+					{
+						final , 
+						"All"
+					}
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
+				print("sent")
+
+			end
+
+
+
+			if c1 == false then 
+				local final = "Pump 1 Status: Offline , Coolant Pool 1: "..tostring(coolant1r).."%" -- do stuff here if the condition is met
+				print("all is fine")
+				local final2 =""
+
+				local tbl_main = 
+					{
+						final , 
+						"All"
+					}
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
+				print("sent")
+
+			end
+
+
+
+			if c2 == true then 
+				local final = "Pump 2 Status: Online , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
+				print("all is fine")
+				local final2 =""
+
+				local tbl_main = 
+					{
+						final , 
+						"All"
+					}
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
+				print("sent")
+
+			end
+
+
+
+			if c2 == false then 
+				local final = "Pump 2 Status: Offline , Coolant Pool 2: "..tostring(coolant2r).."%" -- do stuff here if the condition is met
+				print("all is fine")
+				local final2 =""
+
+				local tbl_main = 
+					{
+						final , 
+						"All"
+					}
+				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
+				print("sent")
+
+
 			else	
 				return end
 			wait(5)
