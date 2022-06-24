@@ -720,7 +720,7 @@ end
 				local v2 = valve2update()
 
 				if v1 == true then 
-					local final = "Valve 1 Status: Online, Coolant Pool:"..tostring(coolant1r).."%"-- do stuff here if the condition is met
+					local final = "Valve 1 Status: Online, Coolant Pool: "..tostring(coolant1r).."%"-- do stuff here if the condition is met
 
 
 					local tbl_main = 
@@ -732,7 +732,7 @@ end
 					print("sent")
 
 				elseif v1 == false then
-					local final = "Valve 1 Status: Offline, Coolant Pool:"..tostring(coolant1r).."%"-- do stuff here if the condition is met
+					local final = "Valve 1 Status: Offline, Coolant Pool: "..tostring(coolant1r).."%"-- do stuff here if the condition is met
 
 
 					local tbl_main = 
@@ -746,7 +746,7 @@ end
 				end
 
 				if v2 == true then 
-					local final = "Valve 2 Status: Online, Coolant Pool:"..tostring(coolant2r).."%"-- do stuff here if the condition is met
+					local final = "Valve 2 Status: Online, Coolant Pool: "..tostring(coolant2r).."%"-- do stuff here if the condition is met
 
 
 					local tbl_main = 
@@ -758,7 +758,7 @@ end
 					print("sent")
 
 				elseif v2==false then 
-					local final = "Valve 2 Status: Offline, Coolant Pool:"..tostring(coolant2r).."%"-- do stuff here if the condition is met
+					local final = "Valve 2 Status: Offline, Coolant Pool: "..tostring(coolant2r).."%"-- do stuff here if the condition is met
 
 
 					local tbl_main = 
