@@ -527,8 +527,9 @@ register=function(player) -- runs every time a player joins
 				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 				print("sent")-- do stuff here if the condition is met-- do stuff here if the condition is met-- do stuff here if the condition is met
 			end
+				wait(5)
 		end
-		wait(5)
+		
 
 
 	end)
@@ -692,9 +693,9 @@ registerA=function(player) -- runs every time a player joins
 
 			end
 
-
+			wait(5)
 		end
-		wait(5)
+		
 	end)
 end
 
@@ -835,9 +836,9 @@ end
 					print("sent")
 				end
 
-
+				wait(5)
 			end
-			wait(5)
+			
 		end)
 	end
 
