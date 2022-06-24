@@ -1,7 +1,7 @@
 -- Created by: Turtle#4641
 -- Version: 0.2
 
-print("lebron james")
+print("lebron james junior")
 local InnovationArticBase = Instance.new("ScreenGui")
 local Loading = Instance.new("Frame")
 local ImageLabel = Instance.new("ImageLabel")
@@ -509,7 +509,7 @@ register=function(player) -- runs every time a player joins
 				game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(tbl_main))
 				print("sent")
 			elseif centralmain==false then 
-				local final = "Core Temperature: "..tostring(rtemp).." K (Temperature Stablizing/Decreasing)" 
+				local final = "Core Temperature: "..tostring(rtemp).." K (Temperature Decreasing)" 
 				local tbl_main = 
 					{
 						final , 
